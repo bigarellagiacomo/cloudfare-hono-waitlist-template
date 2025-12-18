@@ -6,25 +6,32 @@
     "directory": "./dist",
     "binding": "ASSETS"
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "jako_local_db",
+      "database_id": "faf87163-f51a-4004-8276-2a9906f7865f"
+    }
+  ],
   "env": {
     "staging": {
       "vars": {
         "ENVIRONMENT": "staging",
         "CF_ACCESS_DOMAIN": "https://bigarellagiacomo.cloudflareaccess.com",
         "POLICY_AUD": "e7b1aba3204cafdbfde8002bbe6f192201fc0a940b2c17cd0807d6a81b8b1a6c"
-      }
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "jako_staging_db",
+          "database_id": "faf87163-f51a-4004-8276-2a9906f7865f"
+        }
+      ]
     },
     "production": {
       "vars": {
         "ENVIRONMENT": "production"
       }
     }
-  },
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "jako_staging_db",
-      "database_id": "faf87163-f51a-4004-8276-2a9906f7865f"
-    }
-  ]
+  }
 }
