@@ -10,7 +10,8 @@
     {
       "binding": "DB",
       "database_name": "jako_local_db",
-      "database_id": "faf87163-f51a-4004-8276-2a9906f7865f"
+      "database_id": "faf87163-f51a-4004-8276-2a9906f7865f",
+      "migrations_dir": "./src/server/db/migrations"
     }
   ],
   "env": {
@@ -24,7 +25,8 @@
         {
           "binding": "DB",
           "database_name": "jako_staging_db",
-          "database_id": "faf87163-f51a-4004-8276-2a9906f7865f"
+          "database_id": "faf87163-f51a-4004-8276-2a9906f7865f",
+          "migrations_dir": "./src/server/db/migrations"
         }
       ]
     },
