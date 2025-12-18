@@ -1,0 +1,21 @@
+---
+import Button from "./Button";
+
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title = "Title", description = "Add your description" } = Astro.props;
+---
+
+<div
+  class="flex w-sm flex-col justify-center rounded-xl bg-blue-100 py-8 text-center text-neutral-800 shadow"
+>
+  <div>
+    <h2 class="text-xl font-semibold">{title}</h2>
+  </div>
+  <div class="m-3">
+    <p>{description}</p>
+  </div>
+</div>

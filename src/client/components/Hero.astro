@@ -1,0 +1,36 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  date: string;
+}
+
+const defaultDescription =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id earum, quaerat, veritatis animi aliquid maxime ab modi expedita eius veniam dignissimos a eaque quisquam aut? Eaque accusantium quo laudantium aperiam.";
+
+const {
+  title = "Hello there",
+  description = defaultDescription,
+  date = "1998",
+} = Astro.props;
+
+import type { string } from "astro:schema";
+import Signup from "./Signup";
+---
+
+<div class="mx-auto mt-5 w-2/3 gap-4 text-center sm:w-1/2">
+  <div>
+    <h1 class="text-4xl font-bold">{title}</h1>
+  </div>
+  <div class="mt-6">
+    <p>
+      {description}
+    </p>
+    <p class="mt-2 text-neutral-600">
+      Esitmated Launch {date}
+    </p>
+  </div>
+  <div class="mt-7 flex justify-center">
+    <Signup client:load />
+  </div>
+</div>
