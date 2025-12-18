@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Card from "../components/Card.astro";
-
+import ServerStatus from "../components/ServerStatus";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -13,6 +13,9 @@ import Card from "../components/Card.astro";
     description="Learning JavaScript or need some practice? Join the waitlist for my interactive code kata platform 🔥"
     date="2026"
   />
+  <div class="mt-4 text-center">
+    <ServerStatus client:load />
+  </div>
   <div
     class="flex flex-col items-center justify-center gap-3 p-4 sm:flex-row sm:items-stretch"
   >
