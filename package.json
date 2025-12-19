@@ -18,33 +18,38 @@
     "deploy:prod": "bun run build:client && wrangler deploy --env production",
     "db:generate": "drizzle-kit generate",
     "db:migrate:local": "wrangler d1 migrations apply jako_local_db --local",
-    "db:migrate:staging": "wrangler d1 migrations apply jako_staging_db --remote --env staging"
+    "db:migrate:staging": "wrangler d1 migrations apply jako_staging_db --remote --env staging",
+    "create:test:tb": "bun run ./scripts/createTestDb.ts",
+    "destroy:test:tb": "bun run ./scripts/destroyTestDb.ts",
+    "test": "bun run create:test:tb && bun test && bun run destroy:test:tb"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
-    "@tailwindcss/vite": "^4.1.18",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
     "astro": "^5.16.6",
-    "concurrently": "^9.2.1",
     "drizzle-orm": "^0.45.1",
     "hono": "^4.11.1",
     "jose": "^6.1.3",
     "lucide-react": "^0.562.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "tailwindcss": "^4.1.18",
-    "wrangler": "^4.56.0"
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20251217.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/bun": "^1.3.5",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
     "@typescript-eslint/parser": "^8.50.0",
+    "concurrently": "^9.2.1",
     "drizzle-kit": "^0.31.8",
+    "drizzle-seed": "^0.3.1",
     "eslint": "^9.39.2",
     "eslint-plugin-astro": "^1.5.0",
     "postcss-html": "^1.8.0",
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.7.2"
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "wrangler": "^4.56.0"
   }
 }
